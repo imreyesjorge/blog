@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
 const index = () => {
     return(
@@ -11,9 +12,13 @@ const index = () => {
                 </title>
                 <link rel="shortcut icon" href="/logo.svg" />
             </Head>
-            <main>
+            <div className="min-h-screen flex flex-col justify-between">
                 <Nav />
-            </main>
+                <main>
+
+                </main>
+                <Footer />
+            </div>
         </>
     )
 }
