@@ -20,6 +20,7 @@ const index = ({ allPostsData }) => {
             <Post
               title={title}
               date={date}
+              id={id}
               key={id}
             />
           ))}

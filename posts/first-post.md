@@ -1,6 +1,6 @@
 ---
-title: 'First post'
-date: 'Sun, December 6 2020'
+title: 'Learning Next.js'
+date: 'Sunday 6, December 2020'
 ---
 
-This is my first blog post, it's just post without meaning itself but to help testing the website. 
+Next.js is a *react framework*, that aims to efficiency.

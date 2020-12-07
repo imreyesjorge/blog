@@ -1,7 +1,37 @@
-const id = (props) => {
+import { getAllPostIds, getPostData } from '../../lib/posts'
+
+import Nav from '../../components/Nav'
+import Footer from '../../components/Footer'
+
+const post = ({ postData }) => {
     return(
-        <p>Test</p>
+        <>
+            <Nav />
+            <main className="h-screen p-12">
+                <h1 className="text-4xl text-gray-900 font-bold">{postData.title}</h1>
+                <p className="mb-6 text-gray-500">{postData.date}</p>
+                <p className="text-xl">Content</p>
+            </main>
+            <Footer />
+        </>
     )
 }
 
-export default id
+export async function getStaticPaths() {
+    const paths = getAllPostIds()
+    return {
+        paths,
+        fallback: false
+    }
+}
+
+export async function getStaticProps({ params }) {
+    const postData = getPostData(params.id)
+    return {
+        props: {
+            postData
+        }
+    }
+}
+
+export default post
