@@ -4,7 +4,9 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Post from "../components/Post";
 
-const index = () => {
+import { getSortedPostsData } from '../lib/posts'
+
+const index = ({ allPostsData }) => {
   return (
     <>
       <Head>
@@ -13,24 +15,29 @@ const index = () => {
       </Head>
       <div className="min-h-screen flex flex-col">
         <Nav />
-        <main className="w-full min-h-screen p-6 flex items-start justify-center flex-wrap">
-          <Post
-            title="My first blog post"
-            desc="A brief description for my first blog post ever made."
-          />
-          <Post
-            title="A quick introduction to React."
-            desc="A brief description for my first blog post ever made."
-          />
-          <Post
-            title="Next.js 101: Learn the basics"
-            desc="A brief description for my first blog post ever made."
-          />
+        <main className="w-full min-h-screen p-6 flex flex-col">
+          {allPostsData.map(({ id, date, title }) => (
+            <Post
+              title={title}
+              date={date}
+              key={id}
+            />
+          ))}
         </main>
         <Footer />
       </div>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData()
+
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
 
 export default index;
