@@ -10,7 +10,7 @@ const post = ({ postData }) => {
             <main className="h-screen p-12">
                 <h1 className="text-4xl text-gray-900 font-bold">{postData.title}</h1>
                 <p className="mb-6 text-gray-500">{postData.date}</p>
-                <p className="text-xl">Content</p>
+                <div className="text-xl" dangerouslySetInnerHTML={{__html: postData.contentHtml }} />
             </main>
             <Footer />
         </>
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const postData = getPostData(params.id)
+    const postData = await getPostData(params.id)
     return {
         props: {
             postData
