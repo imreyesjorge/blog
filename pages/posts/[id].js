@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
 import Nav from '../../components/Nav'
@@ -6,12 +8,17 @@ import Footer from '../../components/Footer'
 const post = ({ postData }) => {
     return(
         <>
+            <Head>
+                <title>Kings - {postData.title}</title>
+            </Head>
             <Nav />
-            <main className="h-screen p-12">
-                <h1 className="text-4xl text-gray-900 font-bold">{postData.title}</h1>
-                <p className="mb-6 text-gray-500">{postData.date}</p>
-                <div className="text-xl" dangerouslySetInnerHTML={{__html: postData.contentHtml }} />
-            </main>
+            <div className="w-full flex justify-center">
+                <main className="md:w-1/2 h-screen p-12">
+                    <h1 className="text-4xl text-gray-900 font-bold">{postData.title}</h1>
+                    <p className="mb-6 text-gray-500">{postData.date}</p>
+                    <div className="text-xl" dangerouslySetInnerHTML={{__html: postData.contentHtml }} />
+                </main>
+            </div>
             <Footer />
         </>
     )

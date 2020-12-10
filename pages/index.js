@@ -15,7 +15,7 @@ const index = ({ allPostsData }) => {
       </Head>
       <div className="min-h-screen flex flex-col">
         <Nav />
-        <main className="w-full min-h-screen p-6 flex flex-col">
+        <main className="w-full min-h-screen p-6 flex flex-col items-center">
           {allPostsData.map(({ id, date, title }) => (
             <Post
               title={title}
