@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import Author from '../../components/Author'
+
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
 import Nav from '../../components/Nav'
@@ -14,9 +16,15 @@ const post = ({ postData }) => {
             <Nav />
             <div className="w-full flex justify-center">
                 <main className="md:w-1/2 h-screen p-12">
-                    <h1 className="text-4xl text-gray-900 font-bold">{postData.title}</h1>
+                    <h1 className="text-4xl text-gray-900 mb-2 font-bold">{postData.title}</h1>
                     <p className="mb-6 text-gray-500">{postData.date}</p>
-                    <div className="text-xl" dangerouslySetInnerHTML={{__html: postData.contentHtml }} />
+                    <Author
+                        name={postData.author}
+                        image={postData.image}
+                        link={postData.link}
+                        title={postData.job}
+                    />
+                    <div className="text-xl text-justify" dangerouslySetInnerHTML={{__html: postData.contentHtml }} />
                 </main>
             </div>
             <Footer />
