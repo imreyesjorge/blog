@@ -12,6 +12,12 @@ const index = ({ allPostsData }) => {
       <Head>
         <title>Kings – Blog</title>
         <link rel="shortcut icon" href="/logo.svg" />
+        <meta property="og:title" content="Kings – Blog"/>
+        <meta property="og:description" content="Learn little tips about web-dev and general tech things"/>
+        <meta property="og:image" content="/OG_Image.webp"/>
+        <meta property="twitter:title" content="Kings – Blog"/>
+        <meta property="twitter:description" content="Learn little tips about web-dev and general tech things"/>
+        <meta property="twitter:image" content="/OG_Image.webp"/>
       </Head>
       <div className="min-h-screen grid grid-rows-layout dark:bg-gray-900">
         <Nav />

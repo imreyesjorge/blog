@@ -12,6 +12,12 @@ const post = ({ postData }) => {
     <>
       <Head>
         <title>Kings - {postData.title}</title>
+        <meta property="og:title" content={postData.title}/>
+        <meta property="og:description" content="Learn little tips about web-dev and general tech things"/>
+        <meta property="og:image" content="/OG_Image.webp"/>
+        <meta property="twitter:title" content="Kings – Blog"/>
+        <meta property="twitter:description" content="Learn little tips about web-dev and general tech things"/>
+        <meta property="twitter:image" content="/OG_Image.webp"/>
       </Head>
       <div className="min-h-screen dark:bg-gray-900 grid grid-rows-layout">
         <Nav />
