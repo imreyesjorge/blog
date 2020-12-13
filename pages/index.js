@@ -18,6 +18,7 @@ const index = ({ allPostsData }) => {
         <meta property="twitter:title" content="Kings – Blog"/>
         <meta property="twitter:description" content="Learn little tips about web-dev and general tech things"/>
         <meta property="twitter:image" content="/OG_Image.webp"/>
+        <meta property="twitter:card" content="summary_large_image"/>
       </Head>
       <div className="min-h-screen grid grid-rows-layout dark:bg-gray-900">
         <Nav />
