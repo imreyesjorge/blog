@@ -13,9 +13,9 @@ const index = ({ allPostsData }) => {
         <title>Kings – Blog</title>
         <link rel="shortcut icon" href="/logo.svg" />
       </Head>
-      <div className="flex flex-col">
+      <div className="min-h-screen grid grid-rows-layout">
         <Nav />
-        <main className="w-full min-h-screen h-auto p-6 flex flex-col items-center">
+        <main className="w-full h-auto p-6 flex flex-col items-center">
           {allPostsData.map(({ id, date, title }) => (
             <Post
               title={title}
