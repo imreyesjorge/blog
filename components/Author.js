@@ -10,10 +10,10 @@ const Author = ({ name, image, link, title }) => {
             className="rounded-full"
          />
          <div className="ml-4">
-            <p className="font-semibold">
+            <p className="dark:text-gray-200 font-semibold">
                {name}
             </p>
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-gray-600">
                {title}
             </p>
          </div>

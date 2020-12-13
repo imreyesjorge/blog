@@ -13,7 +13,7 @@ const Nav = () => {
                         height={40}
                         className="rounded"
                     />
-                    <h3 className="text-indigo-500 text-2xl font-bold ml-4">Kings</h3>
+                    <h3 className="text-indigo-500 dark:text-white text-2xl font-bold ml-4">Kings</h3>
                 </a>
             </Link>
         </nav>

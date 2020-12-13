@@ -13,7 +13,7 @@ const index = ({ allPostsData }) => {
         <title>Kings – Blog</title>
         <link rel="shortcut icon" href="/logo.svg" />
       </Head>
-      <div className="min-h-screen grid grid-rows-layout">
+      <div className="min-h-screen grid grid-rows-layout dark:bg-gray-900">
         <Nav />
         <main className="w-full h-auto p-6 flex flex-col items-center">
           {allPostsData.map(({ id, date, title }) => (

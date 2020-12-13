@@ -13,11 +13,11 @@ const post = ({ postData }) => {
       <Head>
         <title>Kings - {postData.title}</title>
       </Head>
-      <div className="min-h-screen grid grid-rows-layout">
+      <div className="min-h-screen dark:bg-gray-900 grid grid-rows-layout">
         <Nav />
         <div className="w-full flex justify-center">
           <main className="md:w-1/2 p-12">
-            <h1 className="text-4xl text-gray-900 mb-2 font-bold">
+            <h1 className="text-4xl text-gray-900 dark:text-white mb-2 font-bold">
               {postData.title}
             </h1>
             <p className="mb-6 text-gray-500">{postData.date}</p>
@@ -28,7 +28,7 @@ const post = ({ postData }) => {
               title={postData.job}
             />
             <div
-              className="text-xl text-justify"
+              className="dark:text-gray-200 text-xl text-justify"
               dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
             />
           </main>
